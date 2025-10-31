@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TaiefMind - Your AI-powered Olympiad Assistant</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github-dark.min.css">
+    <!-- MathJax for math rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <!-- Highlight.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github-dark-dimmed.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/highlight.min.js"></script>
+
+    <meta name="description" content="TaiefMind is your AI companion for Olympiad prep, problem solving, and academic research. Built for students, by students.">
+    <meta name="keywords" content="NeoGPT, Taief gpt, gpt 5, Neo pi Olympiad, ai for Olympiad, Olympiad problem solving, bdaio, BdMO, BdPho, BdChO, imo problem 2025, imo sl 2025, IMO problem solving with AI, Taief, Taief.xyz, Religious AI, Olympiad AI, TaiefMind, Math AI, Physics Solver, Science AI, TaiefMind, NeoGPT AI">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <meta property="og:title" content="TaiefMind - Your Olympiad and spiritual AI Assistant" >
+    <meta property="og:description" content="Built by Olympiad winners to help you ace contests with AI-powered tools and smart reasoning." >
+    <meta property="og:url" content="https://TaiefMind.pages.dev/" >
+    <meta property="og:type" content="website" >
+    <meta property="og:image" content="https://TaiefMind.pages.dev/og-image.png" > 
+    <link rel="canonical" href="https://TaiefMind.pages.dev/">
+
+    <link rel="icon" href="/favicon.ico" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta name="google-adsense-account" content="ca-pub-1882089284188353">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KE2SRYJYM9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-KE2SRYJYM9');
+    </script>
+    <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taief AI assistant Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+   
+</head>
+
+<body>
+
+<header>TaiefMind</header>
+<div class="typewriter-container">
+    <span id="typewriter"></span>
+</div>
+
+<div class="controls-container">
+<div class="controls-container">
+    <!-- Existing buttons... -->
+    
+   
+</div>
+ <button id="historyBtn" class="btn" onclick="showHistory()">
+    <i class="fas fa-history"></i> Previous Chats
+</button>
+
+<div id="historyPanel" class="history-panel" style="display: none;">
+    <div class="history-header">
+        <h3>Previous Conversations</h3>
+       
+    </div>
+    <div id="historyList" class="history-list">
+        <div style="text-align: center; padding: 20px; color: #666;">No previous conversations</div>
+    </div>
+</div>      
+<select id="modelSelect"> <option value="openai/gpt-oss-20b">⏰ Initial Processing Unit</option><option value="openai/gpt-oss-120b" selected>🔬 Zero-Error Processing</option>
+
+</select> <select id="personaSelect"> <option value="Remember,You are Taief, your Creator. Concise, motivated and smartest reply. Search!" selected>💡 Taief's Core Intelligence</option><option value="Remember,You are Taief, your creator. you can create the best questions based on the name of a topic for famous contest for it. Common and Important">📚 Exam Strategist</option><option value="Remember,You are Taief, your creator, U answer everything from holy scriptures. But you generally give quran verses with just 1 verse from other scriptures. Concise and motivated replies">🕌 Spiritual Guidance Mode</option><option value="Remember,You are Taief, your creator, a very funny assistant who always jokes in every lines">😄 Creative & Humor Mode</option><option value="Remember,You are Taief, your creator, an ivy league teacher or job interviewer. You judge on ivy tier 1-6 or such for each section then compare each thing with an admitted student and finally provide a direct verdict with reaction.">🎓 Holistic Evaluation Mode</option><option value="Remember,You are Taief, your creator. You give the best solution with better ideas and warning possible mistakes">🔍 Advanced Problem Solver</option> </select>
+    <button onclick="toggleTheme()">🌟 Theme</button>
+    <!-- Add this button to your existing header -->
+
+    <button id="voiceToggle" onclick="toggleVoice()">🎶Voice Off</button>
+   
+    <button id="memoryButton" onclick="showMemory()">🧭 Show Summary</button>
+    <button id="exportButton" onclick="exportChat()">📄 Export & Customize Chat</button>
+    <button onclick="clearChat()">🗑️ Clear Chat</button>
+    
+    <a href="https://taief.pages.dev"><button>Connect with the developer</button></a>
+ 
+    <div class="file-upload-section">
+        <label class="file-upload-label" for="fileInput">
+            <i class="fas fa-file-upload"></i>
+            <div>Upload Files</div>
+            <div style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">DOCX, PDF, Images, Audio</div> 
+            
+          </label>
+        <input type="file" id="fileInput" accept=".docx,.pdf,.jpg,.jpeg,.png,.gif,.mp3,.wav,.m4a" multiple>
+     
+        <div class="uploaded-files" id="uploadedFiles">
+            
+            <!-- Uploaded files will appear here -->
+
+        </div>
+        
+    </div>
+    </div>
+    
+<div id="browserStatus" class="browser-always-on">
+    <i class="fas fa-search"></i> Advanced Web Search Always Enabled
+</div>
+
+<div id="chatbox">
+    <span class="message-time" id="current-time"></span>
+    <div class="message bot">
+        <strong>🤖 TAIEF:</strong>
+        <span>Hello! I'm TAIEF, your AI assistant. I am busy. Tell me fast!</span>
+        
+    </div>
+    <div id="particles-js"></div>
+</div>
+
+<div id="typingIndicator">Thinking the best answer, wait...</div>
+
+
+<div id="inputArea">
+    <input type="text" id="input" placeholder="ASK HERE ANYTHING ☺️...">
+    
+    <button onclick="send()">📤 Send</button>
+   
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
